@@ -1,4 +1,5 @@
 package helper.logger;
+import helper.resource.ResourceHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -15,7 +16,7 @@ public class LoggerHelper {
             return Logger.getLogger(cls);
         }
         //DOMConfigurator.configure("/Users/globallogic/Projects/AutomationGroovy/src/main/resources/logger.xml");
-        PropertyConfigurator.configure("/Users/globallogic/Projects/webAutomationFeamework/src/main/resourcesFolder/log4j.properties");
+        PropertyConfigurator.configure(ResourceHelper.getResourcePath("/src/main/resourcesFolder/log4j.properties"));
         root = true;
         return Logger.getLogger(cls);
     }
